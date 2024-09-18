@@ -1,0 +1,203 @@
+desputedetails = zoho.crm.getRecordById("FCRA",disputeid);
+FCRA_Status = desputedetails.get("FCRA_Status");
+Want_to_send_mail = desputedetails.get("Want_to_send_mail");
+email = desputedetails.get("Owner").get("email");
+if(Want_to_send_mail == "Yes")
+{
+	if(FCRA_Status == "1st Attempt" || FCRA_Status == "2nd Attempt")
+	{
+		frommap = Map();
+		frommap.put("user_name",zoho.loginuser);
+		frommap.put("email",zoho.loginuserid);
+		tomap = Map();
+		tomap.put("email",email);
+		tolist = List();
+		tolist.add(tomap);
+		template = Map();
+		template.put("id","5027060000000875128");
+		mainmap = Map();
+		mainmap.put("from",frommap);
+		mainmap.put("to",tolist);
+		mainmap.put("template",template);
+		finallist = List();
+		finallist.add(mainmap);
+		finalmap = Map();
+		finalmap.put("data",finallist);
+		resp = invokeurl
+		[
+			url :"https://www.zohoapis.com/crm/v4/FCRA/" + disputeid + "/actions/send_mail"
+			type :POST
+			parameters:finalmap.toString()
+			connection:"templatesend"
+		];
+		info resp;
+	}
+	else if(FCRA_Status == "Promise Made" || FCRA_Status == "Post Promise FU1" || FCRA_Status == "Post Promise FU2")
+	{
+		frommap = Map();
+		frommap.put("user_name",zoho.loginuser);
+		frommap.put("email",zoho.loginuserid);
+		tomap = Map();
+		tomap.put("email",email);
+		tolist = List();
+		tolist.add(tomap);
+		template = Map();
+		template.put("id","5027060000000875206");
+		mainmap = Map();
+		mainmap.put("from",frommap);
+		mainmap.put("to",tolist);
+		mainmap.put("template",template);
+		finallist = List();
+		finallist.add(mainmap);
+		finalmap = Map();
+		finalmap.put("data",finallist);
+		resp = invokeurl
+		[
+			url :"https://www.zohoapis.com/crm/v4/FCRA/" + disputeid + "/actions/send_mail"
+			type :POST
+			parameters:finalmap.toString()
+			connection:"templatesend"
+		];
+		info resp;
+	}
+	else if(FCRA_Status == "CR Pull Appointment Set")
+	{
+		frommap = Map();
+		frommap.put("user_name",zoho.loginuser);
+		frommap.put("email",zoho.loginuserid);
+		tomap = Map();
+		tomap.put("email",email);
+		tolist = List();
+		tolist.add(tomap);
+		template = Map();
+		template.put("id","5027060000001139541");
+		mainmap = Map();
+		mainmap.put("from",frommap);
+		mainmap.put("to",tolist);
+		mainmap.put("template",template);
+		finallist = List();
+		finallist.add(mainmap);
+		finalmap = Map();
+		finalmap.put("data",finallist);
+		resp = invokeurl
+		[
+			url :"https://www.zohoapis.com/crm/v4/FCRA/" + disputeid + "/actions/send_mail"
+			type :POST
+			parameters:finalmap.toString()
+			connection:"templatesend"
+		];
+		info resp;
+	}
+	else if(FCRA_Status == "Waiting for CR" || Want_to_send_mail == "CR Request FU1" || FCRA_Status == "CR Request FU2")
+	{
+		frommap = Map();
+		frommap.put("user_name",zoho.loginuser);
+		frommap.put("email",zoho.loginuserid);
+		tomap = Map();
+		tomap.put("email",email);
+		tolist = List();
+		tolist.add(tomap);
+		template = Map();
+		template.put("id","5027060000001063605");
+		mainmap = Map();
+		mainmap.put("from",frommap);
+		mainmap.put("to",tolist);
+		mainmap.put("template",template);
+		finallist = List();
+		finallist.add(mainmap);
+		finalmap = Map();
+		finalmap.put("data",finallist);
+		resp = invokeurl
+		[
+			url :"https://www.zohoapis.com/crm/v4/FCRA/" + disputeid + "/actions/send_mail"
+			type :POST
+			parameters:finalmap.toString()
+			connection:"templatesend"
+		];
+		info resp;
+	}
+	else if(FCRA_Status == "Post Review FU1" || Want_to_send_mail == "Post Review FU2")
+	{
+		frommap = Map();
+		frommap.put("user_name",zoho.loginuser);
+		frommap.put("email",zoho.loginuserid);
+		tomap = Map();
+		tomap.put("email",email);
+		tolist = List();
+		tolist.add(tomap);
+		template = Map();
+		template.put("id","5027060000000916094");
+		mainmap = Map();
+		mainmap.put("from",frommap);
+		mainmap.put("to",tolist);
+		mainmap.put("template",template);
+		finallist = List();
+		finallist.add(mainmap);
+		finalmap = Map();
+		finalmap.put("data",finallist);
+		resp = invokeurl
+		[
+			url :"https://www.zohoapis.com/crm/v4/FCRA/" + disputeid + "/actions/send_mail"
+			type :POST
+			parameters:finalmap.toString()
+			connection:"templatesend"
+		];
+		info resp;
+	}
+	else if(FCRA_Status == "Review and Sign Disputes" || FCRA_Status == "Review and Sign FU1" || Want_to_send_mail == "Review and Sign FU2")
+	{
+		frommap = Map();
+		frommap.put("user_name",zoho.loginuser);
+		frommap.put("email",zoho.loginuserid);
+		tomap = Map();
+		tomap.put("email",email);
+		tolist = List();
+		tolist.add(tomap);
+		template = Map();
+		template.put("id","5027060000000916824");
+		mainmap = Map();
+		mainmap.put("from",frommap);
+		mainmap.put("to",tolist);
+		mainmap.put("template",template);
+		finallist = List();
+		finallist.add(mainmap);
+		finalmap = Map();
+		finalmap.put("data",finallist);
+		resp = invokeurl
+		[
+			url :"https://www.zohoapis.com/crm/v4/FCRA/" + disputeid + "/actions/send_mail"
+			type :POST
+			parameters:finalmap.toString()
+			connection:"templatesend"
+		];
+		info resp;
+	}
+	else if(FCRA_Status == "Fee Agreement to be Sent Out" || Want_to_send_mail == "Fee Agreement FU1" || FCRA_Status == "Fee Agreement FU2")
+	{
+		frommap = Map();
+		frommap.put("user_name",zoho.loginuser);
+		frommap.put("email",zoho.loginuserid);
+		tomap = Map();
+		tomap.put("email",email);
+		tolist = List();
+		tolist.add(tomap);
+		template = Map();
+		template.put("id","5027060000001136732");
+		mainmap = Map();
+		mainmap.put("from",frommap);
+		mainmap.put("to",tolist);
+		mainmap.put("template",template);
+		finallist = List();
+		finallist.add(mainmap);
+		finalmap = Map();
+		finalmap.put("data",finallist);
+		resp = invokeurl
+		[
+			url :"https://www.zohoapis.com/crm/v4/FCRA/" + disputeid + "/actions/send_mail"
+			type :POST
+			parameters:finalmap.toString()
+			connection:"templatesend"
+		];
+		info resp;
+	}
+}
